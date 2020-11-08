@@ -21,10 +21,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        xInput = Input.GetAxis("Vertical");
-        zInput = Input.GetAxis("Horizontal");
+        xInput = Input.GetAxis("Horizontal");
+        zInput = Input.GetAxis("Vertical");
 
-        Vector3 move = transform.right * -xInput + transform.forward * zInput;
+        Vector3 move = transform.right * xInput + transform.forward * zInput;
 
         controller.Move(move * currentSpeed * Time.deltaTime);
 

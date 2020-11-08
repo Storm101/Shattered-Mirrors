@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 8965603021979439809}
   - component: {fileID: 4975080598134393118}
   - component: {fileID: 8759239948571578745}
+  - component: {fileID: 6338251681775487671}
   - component: {fileID: 4096257136674328533}
+  - component: {fileID: 7868328935673149013}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -81,6 +83,24 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &6338251681775487671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68650191626798913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c63f57b0707d4d745a85885d69344735, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentSpeed: 5
+  walkSpeed: 5
+  strafeSpeed: 4
+  backwardsSpeed: 3
+  crouchSpeed: 2
+  controller: {fileID: 7868328935673149013}
 --- !u!136 &4096257136674328533
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -94,6 +114,24 @@ CapsuleCollider:
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!143 &7868328935673149013
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68650191626798913}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 1.9999999
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3836308806711512975
 GameObject:
@@ -200,6 +238,7 @@ GameObject:
   - component: {fileID: 412056474120698346}
   - component: {fileID: 982949512766505064}
   - component: {fileID: 451242112381339908}
+  - component: {fileID: 6839425769470834735}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -272,3 +311,17 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5258606933795268851}
   m_Enabled: 1
+--- !u!114 &6839425769470834735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5258606933795268851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ef6ea8d4937aa94c8891320e1e4f798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 300
+  player: {fileID: 8965603021979439809}
