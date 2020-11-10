@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 180446745}
   - component: {fileID: 180446744}
   - component: {fileID: 180446743}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WestWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1016,7 +1016,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14756
+  m_Name: pb_Mesh15384
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1179,7 +1179,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14790
+  m_Name: pb_Mesh15418
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1349,7 +1349,7 @@ GameObject:
   - component: {fileID: 566166686}
   - component: {fileID: 566166685}
   - component: {fileID: 566166684}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2330,7 +2330,7 @@ GameObject:
   - component: {fileID: 1467834987}
   - component: {fileID: 1467834986}
   - component: {fileID: 1467834985}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SouthWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3215,7 +3215,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1917078484}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3239,13 +3239,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1936401875 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1077345209989662069, guid: a8fa990fb75015942b763e7a37696f4e,
+    type: 3}
+  m_PrefabInstance: {fileID: 7883898359716753612}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &2044393471
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14772
+  m_Name: pb_Mesh15400
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3419,11 +3425,31 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.44
       objectReference: {fileID: 0}
+    - target: {fileID: 1077345209989662069, guid: a8fa990fb75015942b763e7a37696f4e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.994
+      objectReference: {fileID: 0}
     - target: {fileID: 6338251681775487671, guid: a8fa990fb75015942b763e7a37696f4e,
         type: 3}
       propertyPath: controller
       value: 
       objectReference: {fileID: 7883898359716753614}
+    - target: {fileID: 6338251681775487671, guid: a8fa990fb75015942b763e7a37696f4e,
+        type: 3}
+      propertyPath: groundCheck
+      value: 
+      objectReference: {fileID: 1936401875}
+    - target: {fileID: 6338251681775487671, guid: a8fa990fb75015942b763e7a37696f4e,
+        type: 3}
+      propertyPath: groundMask.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 6338251681775487671, guid: a8fa990fb75015942b763e7a37696f4e,
+        type: 3}
+      propertyPath: jumpHeight
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8965603021979439809, guid: a8fa990fb75015942b763e7a37696f4e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3478,6 +3504,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9015808812246094116, guid: a8fa990fb75015942b763e7a37696f4e,
+        type: 3}
+      propertyPath: m_Name
+      value: groundCheck
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8fa990fb75015942b763e7a37696f4e, type: 3}
