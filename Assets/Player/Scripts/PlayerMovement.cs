@@ -39,6 +39,15 @@ public class PlayerMovement : MonoBehaviour
 
         move = transform.right * xInput + transform.forward * zInput;
 
+
+
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+
+        if (isGrounded && playerVelocity.y < 0)
+        {
+            playerVelocity.y = -2f;
+        }
+
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -2f * gravity);
@@ -66,14 +75,6 @@ public class PlayerMovement : MonoBehaviour
         else if (forwardsAmount < 0)
         {
             currentSpeed = walkSpeed;
-        }
-
-
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-
-        if (isGrounded && playerVelocity.y < 0)
-        {
-            playerVelocity.y = -2f;
         }
 
         playerVelocity.y += gravity * Time.deltaTime;
