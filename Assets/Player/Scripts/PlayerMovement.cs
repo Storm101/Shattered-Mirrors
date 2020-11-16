@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
         {
             currentSpeed = runSpeed;
         }
-        else
+        else if (isGrounded)
         {
             currentSpeed = walkSpeed;
         }
