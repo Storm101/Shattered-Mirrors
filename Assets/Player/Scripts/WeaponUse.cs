@@ -21,6 +21,13 @@ public class WeaponUse : MonoBehaviour
 
     public Animator _animator;
 
+    public GameObject bulletPrefab;
+    public Transform bulletSpawn;
+
+    public float range = 100f;
+
+    public Camera fpsCam;
+
     void Start()
     {
         hasGun = false;
@@ -54,6 +61,7 @@ public class WeaponUse : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && gunActive && !hasAttacked)
         {
             hasAttacked = true;
+            Fire();
         }
         if (Input.GetMouseButtonDown(0) && daggerActive && !hasAttacked)
         {
@@ -76,5 +84,24 @@ public class WeaponUse : MonoBehaviour
             if (daggerActive)
                 _animator.SetBool("hasSwung", false);
         }
+    }
+    void Fire()
+    {
+        GameObject bullet = Instantiate(bulletPrefab);
+        bullet.transform.position = bulletPrefab.transform.position;
+        bullet.transform.rotation = bulletPrefab.transform.rotation;
+        RaycastHit hit;
+        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
+        {
+            bullet.transform.Translate(Vector3.forward * Time.deltaTime);
+            bullet.transform.position = bullet.transform.position + new Vector3(1 * range * Time.deltaTime, 0, 0);
+            Debug.Log(hit.transform.name);
+        }
+    }
+    private IEnumerator DestroyBulletAfterTime(GameObject bullet, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        Destroy(bullet);
     }
 }
