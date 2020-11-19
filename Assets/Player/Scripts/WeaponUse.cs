@@ -87,14 +87,10 @@ public class WeaponUse : MonoBehaviour
     }
     void Fire()
     {
-        GameObject bullet = Instantiate(bulletPrefab);
-        bullet.transform.position = bulletPrefab.transform.position;
-        bullet.transform.rotation = bulletPrefab.transform.rotation;
+        GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.transform.position, bulletSpawn.transform.rotation);
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
-            bullet.transform.Translate(Vector3.forward * Time.deltaTime);
-            bullet.transform.position = bullet.transform.position + new Vector3(1 * range * Time.deltaTime, 0, 0);
             Debug.Log(hit.transform.name);
         }
     }
