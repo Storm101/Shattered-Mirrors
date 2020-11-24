@@ -36,8 +36,10 @@ public class PlayerMovement : MonoBehaviour
     {
         xInput = Input.GetAxis("Horizontal");
         zInput = Input.GetAxis("Vertical");
+        
+        move = (transform.right * xInput + transform.forward * zInput).normalized;
 
-        move = transform.right * xInput + transform.forward * zInput;
+
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
@@ -77,8 +79,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         playerVelocity.y += gravity * Time.deltaTime;
-
-
+        
         controller.Move(move * currentSpeed * Time.deltaTime);
         controller.Move(playerVelocity * Time.deltaTime);
     }
