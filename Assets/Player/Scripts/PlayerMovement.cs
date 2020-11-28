@@ -34,10 +34,42 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        xInput = Input.GetAxis("Horizontal");
-        zInput = Input.GetAxis("Vertical");
-        
-        move = (transform.right * xInput + transform.forward * zInput).normalized;
+        if (Input.GetKey(KeyCode.W))
+        {
+            move = transform.forward * 1;
+        }
+        else
+        {
+            move = new Vector3(0, 0, 0);
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            move = transform.forward * -1;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            move = transform.right * -1;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            move = transform.right * 1;
+        }
+        if (Input.GetKey(KeyCode.W) && (Input.GetKey(KeyCode.D)))
+        {
+            move = (transform.right * 1 + transform.forward * 1).normalized;
+        }
+        if (Input.GetKey(KeyCode.W) && (Input.GetKey(KeyCode.A)))
+        {
+            move = (transform.right * -1 + transform.forward * 1).normalized;
+        }
+        if (Input.GetKey(KeyCode.S) && (Input.GetKey(KeyCode.D)))
+        {
+            move = (transform.right * 1 + transform.forward * -1).normalized;
+        }
+        if (Input.GetKey(KeyCode.S) && (Input.GetKey(KeyCode.A)))
+        {
+            move = (transform.right * -1 + transform.forward * -1).normalized;
+        }
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
