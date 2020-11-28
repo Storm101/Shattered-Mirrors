@@ -39,8 +39,6 @@ public class PlayerMovement : MonoBehaviour
         
         move = (transform.right * xInput + transform.forward * zInput).normalized;
 
-
-
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -2f * gravity);
@@ -55,7 +53,6 @@ public class PlayerMovement : MonoBehaviour
             currentSpeed = walkSpeed;
         }
 
-
         float forwardsAmount = Vector3.Dot(transform.forward, move);
         if (forwardsAmount < -.5f)
         {
@@ -69,7 +66,6 @@ public class PlayerMovement : MonoBehaviour
         {
             currentSpeed = walkSpeed;
         }
-
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
