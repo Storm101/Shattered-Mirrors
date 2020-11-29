@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = 0.2f;
     public LayerMask groundMask;
-    bool isGrounded;
+    public bool isGrounded;
 
     public Vector3 playerVelocity;
     public float jumpHeight = 2f;
@@ -70,13 +70,12 @@ public class PlayerMovement : MonoBehaviour
         {
             move = (transform.right * -1 + transform.forward * -1).normalized;
         }
-
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && (isGrounded))
         {
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
-        if (Input.GetKey(KeyCode.LeftShift) && isGrounded)
+        if (Input.GetKey(KeyCode.LeftShift) && (isGrounded))
         {
             currentSpeed = runSpeed;
         }
