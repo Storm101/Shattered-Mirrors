@@ -7,8 +7,10 @@ public class PlayerCamera : MonoBehaviour
     float rotationSpeed = 2;
 
     public Transform player;
+    public Transform gun;
 
     float xRotation = 0f;
+    float yRotation = 0f;
 
     void Start()
     {
@@ -25,5 +27,10 @@ public class PlayerCamera : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         player.Rotate(Vector3.up * mouseX);
+
+        yRotation -= mouseY;
+        yRotation = Mathf.Clamp(yRotation, -90f, 90f);
+        gun.transform.localRotation = Quaternion.Euler(yRotation, 0f, 0f);
+
     }
 }
