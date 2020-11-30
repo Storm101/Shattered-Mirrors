@@ -12,12 +12,6 @@ public class DoorOpen : MonoBehaviour
     public Animator leftDoorAnim;
     public Animator rightDoorAnim;
 
-    void Start()
-    {
-        rightDoorAnim.SetBool("RightDoorOpen", false);
-        leftDoorAnim.SetBool("LeftDoorOpen", false);
-    }
-
     void Update()
     {
         if (timerStarted)
