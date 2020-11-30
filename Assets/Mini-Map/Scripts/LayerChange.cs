@@ -18,6 +18,11 @@ public class LayerChange : MonoBehaviour
         isHidden = Physics.CheckSphere(hiddenCheck.position, hiddenDistance, hiddenMask);
         isGrounded = Physics.CheckSphere(hiddenCheck.position, hiddenDistance, groundMask);
 
+        if (floor == null)
+        {
+            return;
+        }
+
         if (isHidden)
         {
             floor.layer = 0;
