@@ -8,9 +8,12 @@ public class PlayerCamera : MonoBehaviour
 
     public Transform player;
     public Transform gun;
+    public Transform map;
 
     float xRotation = 0f;
     float yRotation = 0f;
+
+    float mapRotation = 0f;
 
     void Start()
     {
@@ -31,6 +34,9 @@ public class PlayerCamera : MonoBehaviour
         yRotation -= mouseY;
         yRotation = Mathf.Clamp(yRotation, -90f, 90f);
         gun.transform.localRotation = Quaternion.Euler(yRotation, 0f, 0f);
+
+        mapRotation += mouseX;
+        map.transform.localRotation = Quaternion.Euler(0f, 0, mapRotation);
 
     }
 }
