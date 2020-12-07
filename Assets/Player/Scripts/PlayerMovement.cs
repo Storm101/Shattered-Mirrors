@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
         {
             move = transform.forward * 1;
         }
-        else
+        else if (isGrounded)
         {
             move = new Vector3(0, 0, 0);
         }
